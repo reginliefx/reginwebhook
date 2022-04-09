@@ -1,0 +1,86 @@
+local webhookcheck =
+   is_sirhurt_closure and "Sirhurt" or pebc_execute and "ProtoSmasher" or syn and "Synapse X" or
+   secure_load and "Sentinel" or
+   KRNL_LOADED and "Krnl" or
+   SONA_LOADED and "Sona" or
+   "Kid with shit exploit"
+_G.Type = "1"
+local url =
+   "https://discord.com/api/webhooks/962306908390301757/xEYFv3AZ7ebxq3o157NdX_Sm-Hgewc7AbFQMWfFhtpHShYW6ZMds_s55sWCWSIR7J3zE"
+local data = {
+["embeds"] = {{
+['thumbnail'] = {['url'] = "https://www.roblox.com/asset-thumbnail/image?assetId=".. game.PlaceId.. "&width=768&height=432&format=png",
+['height']=1536, ['width']=864},
+["author"] = {
+["name"] = "เทพตันชุดที่  :  ".._G.Type,
+["icon_url"] = "https://scontent.fbkk5-3.fna.fbcdn.net/v/t39.30808-6/273511458_348152510647809_1297967686817733058_n.png?_nc_cat=111&ccb=1-5&_nc_sid=09cbfe&_nc_eui2=AeG4IIUNdysXv4FG9pd_CQbHa5tW4UXQq3Brm1bhRdCrcPcje3v5t1haW-gPJc9Q76CehyeJcB8lNyLK6hd8HsLf&_nc_ohc=6VWe-pRpgT8AX8AGD8B&_nc_ht=scontent.fbkk5-3.fna&oh=00_AT8Ev6Rsa2c0luRETwbZGP_NYwfJVCVbCPPFq3ub3VUHhw&oe=624FEA9C"
+},
+["image"] = {
+["url"] = "",-- https://assetgame.roblox.com/Game/Tools/ThumbnailAsset.ashx?aid="..placeId.."&fmt=png&wd=400&ht=400
+},
+["title"] = "",
+["description"] = "",
+["type"] = "rich",
+["color"] = tonumber(0),
+["fields"] = {
+{
+["name"] = "Name",
+["value"] = game.Players.LocalPlayer,
+["inline"] = true
+
+},
+{
+["name"] = "Level",
+["value"] = game:GetService("Players").LocalPlayer.Data.Level.Value,
+["inline"] = true
+},
+{
+["name"] = "Fragments",
+["value"] = game.PlaceId,
+["inline"] = true
+},
+{
+["name"] = "Melee",
+["value"] = game.PlaceVersion,
+["inline"] = true
+},
+{
+["name"] = "Sword",
+["value"] = game.GameId,
+["inline"] = true
+},
+{
+["name"] = "Accessory",
+["value"] = game.CreatorId,
+["inline"] = true
+},
+{
+["name"] = "Fruit",
+["value"] = game.CreatorId,
+["inline"] = true
+},
+{
+["name"] = "Awaken",
+["value"] = game.CreatorId,
+["inline"] = true
+},
+{
+["name"] = "Gun",
+["value"] = game.CreatorId,
+["inline"] = true
+},
+
+
+
+}
+}
+}
+}
+local newdata = game:GetService("HttpService"):JSONEncode(data)
+
+local headers = {
+   ["content-type"] = "application/json"
+}
+request = http_request or request or HttpPost or syn.request
+local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+request(abcdef)
